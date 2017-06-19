@@ -1,0 +1,16 @@
+---
+- hosts: webservers
+  gather_facts: True
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Install Apache
+      package:
+        name: httpd
+        state: present
+
+    - name: Start Apache service
+      service:
+        name: httpd
+        state: started
