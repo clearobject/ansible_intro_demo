@@ -1,3 +1,17 @@
 ---
-- hosts: all
-  gather_facts: False
+- name: Stop and remove Apache
+  hosts: webservers
+  gather_facts: True
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Stop Apache
+      service:
+        name: httpd
+        state: stopped
+
+    - name: Remove Apache
+      package:
+        name: httpd
+        state: absent
