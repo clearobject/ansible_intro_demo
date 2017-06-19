@@ -1,0 +1,10 @@
+---
+- name: Made to demonstarte Custom Modules
+  hosts: all
+  gather_facts: True
+  become: yes
+  become_method: sudo
+
+  roles:
+    - role: roles/writefile
+    - role: roles/module_demo

@@ -1,0 +1,17 @@
+---
+- name: Import defaults
+  include_vars: defaults/main.yml
+
+- name: Get Package info
+  package_info:
+    packages: "{{ packages }}"
+  register: packages_info_list
+
+- debug:
+    msg: "{{ packages_info_list.results }}"
+
+- name: Write Name and Verison to text file.
+  lineinfile:
+    dest: /home/vagrant/test/test.txt
+    line: "{{ item.name }} | {{ item.version }}"
+  with_items: "{{ packages_info_list.results }}"

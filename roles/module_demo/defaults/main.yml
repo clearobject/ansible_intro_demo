@@ -1,0 +1,6 @@
+---
+# list of packages to get info for.
+packages:
+  - python
+  - bash
+  - curl
