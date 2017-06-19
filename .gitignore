@@ -1,0 +1,27 @@
+# ignore vim swap files
+*.swp
+*.swo
+
+# ignore osx filesystem db
+*.DS_Store
+
+# ignore temp log files
+*.log
+
+# ignore compiled python
+*.pyc
+
+# ignore ansible retries
+*.retry
+
+# ignore generated user_dumps
+*.users
+
+# Ignore Intellij files
+.idea/
+
+# Do not check-in the vault password
+vault_password
+
+# Ignore diff files
+*.diff
