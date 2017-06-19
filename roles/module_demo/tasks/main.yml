@@ -7,9 +7,6 @@
     packages: "{{ packages }}"
   register: packages_info_list
 
-- debug:
-    msg: "{{ packages_info_list.results }}"
-
 - name: Write Name and Verison to text file.
   lineinfile:
     dest: /home/vagrant/test/test.txt
