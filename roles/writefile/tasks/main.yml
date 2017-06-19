@@ -1,0 +1,26 @@
+---
+- name: Import defaults
+  include_vars: defaults/main.yml
+
+- name: Check if test directory exists
+  stat:
+    path: "{{ path_to_file }}"
+  register: dir_exists
+
+- name: Check if file exists
+  stat:
+    path: "{{ path_to_file }}/test.txt"
+  register: file_exists
+  when: dir_exists.stat.exists
+
+- name: Create test directory if it does not exists
+  file:
+    path: "{{ path_to_file }}"
+    state: directory
+  when: not dir_exists.stat.exists
+
+- name: Create file if it does not exist
+  file:
+    path: "{{ path_to_file }}/test.txt"
+    state: touch
+  when: not dir_exists.stat.exists or not file_exists.stat.exists
