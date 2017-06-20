@@ -9,6 +9,7 @@
     - role: roles/apache_setup
 
   post_tasks:
+    # this is where the file made using Ad-Hoc commands will be read
     - name: Check if hello.txt exists
       stat:
         path: /home/vagrant/hello.txt
@@ -20,11 +21,13 @@
       register: hello_text
       when: file_exists.stat.exists
 
+    # slurp returns the contents encoded, so this task will get the data in the file
     - name: Decode slurped contents
       set_fact:
         message: "{{ hello_text['content'] | b64decode }}"
       when: file_exists.stat.exists
 
+    # Since {{ message }} was set before this was run, the template can see that data
     - name: Add custom welcome page
       template:
         src: ../templates/index.html.j2
