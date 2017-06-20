@@ -6,25 +6,25 @@ This project introduces Ansible to new or inexperienced developers. It was prepa
 
 1. Ansible, git and python must be installed on the Control machine.
 
-  **Mac**
-  1. Install homebrew and use it to install the required packages.
-  ```bash
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew install git python ansible
-  ```
+    **Mac**  
+    1. Install homebrew and use it to install the required packages.  
+    ```bash  
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  
+    brew install git python ansible  
+    ```  
 
-  **Linux**
-  1. Install required packages.
-  ```bash
-  yum install python-pip git ansible
-  # For Debian systems, replace yum with apt
-  ```
-  2. Install some system packages that pip will need.
-  ```bash
-  yum install epel-release libffi-devel python-devel openssl-devel gcc
-  # For Debian systems, use:
-  # apt install libffi-dev python-dev libssl-dev gcc
-  ```
+    **Linux**  
+    1. Install required packages.  
+    ```bash  
+    yum install python-pip git ansible  
+    # For Debian systems, replace yum with apt  
+    ```  
+    2. Install some system packages that pip will need.  
+    ```bash  
+    yum install epel-release libffi-devel python-devel openssl-devel gcc  
+    # For Debian systems, use:  
+    # apt install libffi-dev python-dev libssl-dev gcc  
+  ```  
 
 2. Create virtual environment to work in.
   ```bash
