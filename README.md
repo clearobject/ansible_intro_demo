@@ -52,7 +52,7 @@ Inventories are included using the `-i` option when running **playbooks** or Ad-
 # Library
 
 This directory holds Custom Modules. Ansible will look here for any module that is not built-in.
-There is no special command line option needed to include Custom Modules. Ansible includes them automatically as long as they are in the directory specified in ansible.cfg.
+There is no special command line option needed to include Custom Modules. Ansible includes them automatically as long as they are in the directory specified in `ansible.cfg`.
 
 # Playbooks
 
@@ -71,11 +71,13 @@ Roles are basically just a long list of tasks that will be executed.
 
 Templates are Jinja files that can be formatted to be html files, parts of html files, json objects, etc.  
 Templates pull information from **registered variables** and set **facts**.  
-This information is inserted using either Ansible variable calls: `{{ variable_name }}` or Jinja includes: `{% include anotherTemplate.j2 %}`
+This information is inserted using the usual variable calls: `{{ variable_name }}` or Jinja includes: `{% include anotherTemplate.j2 %}`
 
 # Variables
 
 Variables are used to store output from various module runs. These outputs are json objects that may contain strings, booleans, lists, etc.  
 **Facts** can be set as a playbook runs using the `set_fact` module. They can also be set under the **group_vars** and **host_vars** folders.  
 Output from modules that have been run can be put into variables using the `register` module.  
-The **group_vars** and **host_vars** folders contain files that list default values for different variables. These variables may be empty, then updated as the playbook or role runs.
+The **group_vars** and **host_vars** folders contain files that list default values for different variables. These variables may be empty, then updated as the playbook or role runs.  
+These variable are included using the Jinja2 template system and has this structure: `"{{ variable_name }}"`  
+Note that in typical use cases, Ansible requires these calls to be inside of quotes.
