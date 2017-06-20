@@ -10,8 +10,16 @@
       service:
         name: httpd
         state: stopped
+      ignore_errors: true
+
+    - name: Remove www directory
+      file:
+        path: /var/www/
+        state: absent
+      ignore_errors: true
 
     - name: Remove Apache
       package:
         name: httpd
         state: absent
+      ignore_errors: true
