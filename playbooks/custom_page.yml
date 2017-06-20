@@ -15,6 +15,22 @@
         name: httpd
         state: started
 
+    - name: Check if hello.txt exists
+      stat:
+        path: /home/vagrant/hello.txt
+      register: file_exists
+
+    - name: Grab file contents to put on index.html
+      slurp:
+        src: /home/vagrant/hello.txt
+      register: hello_text
+      when: file_exists.stat.exists
+
+    - name: Decode slurped contents
+      set_fact:
+        message: "{{ hello_text['content'] | b64decode }}"
+      when: file_exists.stat.exists
+
     - name: Add custom welcome page
       template:
         src: ../templates/index.html.j2

@@ -11,6 +11,11 @@
         <h1 class="display-3">Ansible Intro 06/20/2017</h1>
         <p class="lead">Thanks for coming!</p>
       </div>
+      {% if file_exists.stat.exists %}
+      <div>
+        <p>{{ message }}</p>
+      </div>
+      {% endif %}
     </div>
   </body>
 </html>
