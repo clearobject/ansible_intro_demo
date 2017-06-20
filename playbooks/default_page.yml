@@ -1,5 +1,6 @@
 ---
-- hosts: webservers
+- name: Create default Apache webpage
+  hosts: webservers
   gather_facts: True
   become: yes
   become_method: sudo

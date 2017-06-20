@@ -1,20 +1,14 @@
 ---
-- hosts: webservers
+- name: Create Apache webpage with custom index.html file
+  hosts: webservers
   gather_facts: True
   become: yes
   become_method: sudo
 
-  tasks:
-    - name: Install Apache
-      package:
-        name: httpd
-        state: present
+  roles:
+    - role: roles/apache_setup
 
-    - name: Start Apache service
-      service:
-        name: httpd
-        state: started
-
+  post_tasks:
     - name: Check if hello.txt exists
       stat:
         path: /home/vagrant/hello.txt

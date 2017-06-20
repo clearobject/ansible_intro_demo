@@ -2,12 +2,12 @@
 - name: Import defaults
   include_vars: defaults/main.yml
 
-- name: Get Package info
+- name: Get package info
   package_info:
     packages: "{{ packages }}"
   register: packages_info_list
 
-- name: Write Name and Verison to text file.
+- name: Write name and version to text file.
   lineinfile:
     dest: /home/vagrant/test/test.txt
     line: "{{ item.name }} | {{ item.version }}"
