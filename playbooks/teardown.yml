@@ -18,6 +18,12 @@
         state: absent
       ignore_errors: true
 
+    - name: Remove created test directory and file
+      file:
+        path: ~/test/
+        state: absent
+      ignore_errors: true
+
     - name: Remove Apache
       package:
         name: httpd
