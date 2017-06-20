@@ -1,7 +1,5 @@
 ---
-
 - name: Testing using roles
-
   hosts: all
   gather_facts: True
   become: yes
