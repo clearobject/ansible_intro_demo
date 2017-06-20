@@ -14,16 +14,17 @@ This project introduces Ansible to new or inexperienced developers. It was prepa
     ```  
 
     **Linux**  
-    1. Install required packages.  
+    1. Install required system packages.
     ```bash  
-    yum install python-pip git ansible  
-    # For Debian systems, replace yum with apt  
-    ```  
-    2. Install some system packages that pip will need.  
-    ```bash  
-    yum install epel-release libffi-devel python-devel openssl-devel gcc  
+    yum install epel-release libffi-devel python-devel openssl-devel gcc sshpass  
     # For Debian systems, use:  
-    # apt install libffi-dev python-dev libssl-dev gcc  
+    # apt install libffi-dev python-dev libssl-dev gcc sshpass  
+    ```
+
+    2. Install pip and git.  
+    ```bash  
+    yum install python-pip git ansible
+    # For Debian systems, replace yum with apt  
     ```
 
 2. Create virtual environment to work in.
