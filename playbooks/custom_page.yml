@@ -1,7 +1,7 @@
 ---
 - name: Create Apache webpage with custom index.html file
-  hosts: webservers
-  gather_facts: True
+  hosts: all
+  gather_facts: true
   become: yes
   become_method: sudo
 

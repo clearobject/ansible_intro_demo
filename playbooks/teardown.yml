@@ -1,11 +1,13 @@
 ---
 - name: Stop and remove Apache
   hosts: webservers
-  gather_facts: True
+  gather_facts: true
   become: yes
   become_method: sudo
 
   tasks:
+    # Service module is not idempotent
+    # So "ignore_errors" is needed to not fail out if httpd doesn't exist
     - name: Stop Apache
       service:
         name: httpd
@@ -16,16 +18,13 @@
       file:
         path: /var/www/
         state: absent
-      ignore_errors: true
 
     - name: Remove created test directory and file
       file:
         path: /home/vagrant/test/
         state: absent
-      ignore_errors: true
 
     - name: Remove Apache
       package:
         name: httpd
         state: absent
-      ignore_errors: true

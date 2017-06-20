@@ -1,7 +1,4 @@
 ---
-- name: Import defaults
-  include_vars: defaults/main.yml
-
 - name: Check if test directory exists
   stat:
     path: "{{ path_to_file }}"

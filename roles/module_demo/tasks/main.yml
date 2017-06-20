@@ -1,7 +1,4 @@
 ---
-- name: Import defaults
-  include_vars: defaults/main.yml
-
 - name: Get package info
   package_info:
     packages: "{{ packages }}"
