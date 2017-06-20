@@ -24,7 +24,7 @@ This project introduces Ansible to new or inexperienced developers. It was prepa
     yum install epel-release libffi-devel python-devel openssl-devel gcc  
     # For Debian systems, use:  
     # apt install libffi-dev python-dev libssl-dev gcc  
-  ```
+    ```
 
 2. Create virtual environment to work in.
     ```bash  
