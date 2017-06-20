@@ -27,17 +27,17 @@ This project introduces Ansible to new or inexperienced developers. It was prepa
   ```  
 
 2. Create virtual environment to work in.
-  ```bash
-  pip install virtualenv
-  # virtualenv will make a folder for you
-  virtualenv ~/path/to/project
-  cd ~/path/to/project
-  ```
+    ```bash  
+    pip install virtualenv  
+    # virtualenv will make a folder for you  
+    virtualenv ~/path/to/project  
+    cd ~/path/to/project  
+    ```  
 
 3. Clone the automation repo into the project folder.
-  ```bash
-  git clone https://github.com/clearobject/ansible_intro_demo.git
-  ```
+    ```bash  
+    git clone https://github.com/clearobject/ansible_intro_demo.git  
+    ```  
 
 You should be ready to go!
 
