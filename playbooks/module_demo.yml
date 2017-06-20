@@ -1,5 +1,5 @@
 ---
-- name: Made to demonstarte Custom Modules
+- name: Made to demonstrate Custom Modules
   hosts: all
   gather_facts: True
   become: yes
