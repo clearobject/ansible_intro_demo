@@ -20,7 +20,7 @@
 
     - name: Remove created test directory and file
       file:
-        path: ~/test/
+        path: /home/vagrant/test/
         state: absent
       ignore_errors: true
 
